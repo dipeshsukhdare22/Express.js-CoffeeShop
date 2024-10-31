@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Shop</title>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/blog.css">
+
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <!-- Navbar brand - Centered on mobile, left-aligned on larger screens -->
+            <a class="navbar-brand fw-bold mx-lg-0 mx-auto" href="#">
+                Coffee<span style="color: #d4a373;">Bean</span> <i class="fas fa-coffee"></i>
+            </a>
+
+            <!-- Toggler button for mobile view -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navbar content -->
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav ms-auto d-flex align-items-center">
+                    <li class="nav-item me-3">
+                        <a class="nav-link" href="./index.html">Home</a>
+                    </li>
+                    <li class="nav-item me-3">
+                        <a class="nav-link" href="./menu.html">Menu</a>
+                    </li>
+                    <li class="nav-item me-3">
+                        <a class="nav-link" href="./about.html">About Us</a>
+                    </li>
+                    <li class="nav-item me-3">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                    <li class="nav-item me-3">
+                        <a class="nav-link" href="#"><i class="bi bi-cart-fill"></i> Cart</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn custom-btn custom-border-btn" href="./reservation.html">
+                            Reservation
+                            <i class="bi bi-arrow-up-right ms-2"></i>
+                        </a>
+                    </li>
+                    <!-- Login button added here -->
+                    <li class="nav-item ms-3">
+                        <a class="btn custom-btn custom-border-btn" href="#" data-bs-toggle="modal"
+                            data-bs-target="#loginModal">
+                            Login
+                            <i class="bi bi-arrow-up-right ms-2"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Login</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <!-- Email input -->
+                        <div data-mdb-input-init class="form-outline mb-4">
+                            <input type="email" id="form2Example1" class="form-control" />
+                            <label class="form-label" for="form2Example1">Email address</label>
+                        </div>
+
+                        <!-- Password input -->
+                        <div data-mdb-input-init class="form-outline mb-4">
+                            <input type="password" id="form2Example2" class="form-control" />
+                            <label class="form-label" for="form2Example2">Password</label>
+                        </div>
+
+                        <!-- 2 column grid layout for inline styling -->
+                        <div class="row mb-4">
+                            <div class="col d-flex justify-content-center">
+                                <!-- Checkbox -->
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="form2Example31"
+                                        checked />
+                                    <label class="form-check-label" for="form2Example31"> Remember me </label>
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <!-- Simple link -->
+                                <a href="#!">Forgot password?</a>
+                            </div>
+                        </div>
+
+                        <!-- Submit button -->
+                        <button type="button" data-mdb-button-init data-mdb-ripple-init
+                            class="btn btn-primary btn-block mb-4">Sign in</button>
+
+                        <!-- Register link -->
+                        <div class="text-center">
+                            <p>Not a member? <a href="./register.html">Register here</a></p>
+                            <!-- Updated Register link -->
+                        </div>
+
+                        <!-- Register buttons -->
+                        <div class="text-center">
+                            <p>or sign up with:</p>
+                            <button type="button" data-mdb-button-init data-mdb-ripple-init
+                                class="btn btn-link btn-floating mx-1">
+                                <i class="fab fa-facebook-f"></i>
+                            </button>
+                            <button type="button" data-mdb-button-init data-mdb-ripple-init
+                                class="btn btn-link btn-floating mx-1">
+                                <i class="fab fa-google"></i>
+                            </button>
+                            <button type="button" data-mdb-button-init data-mdb-ripple-init
+                                class="btn btn-link btn-floating mx-1">
+                                <i class="fab fa-twitter"></i>
+                            </button>
+                            <button type="button" data-mdb-button-init data-mdb-ripple-init
+                                class="btn btn-link btn-floating mx-1">
+                                <i class="fab fa-github"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Welcome Section -->
+    <section class="home">
+        <div class="container my-5 text-center">
+            <h1>Welcome to Coffee Bean</h1>
+            <p>Discover our rich selection of coffee blends and fresh pastries!</p>
+        </div>
+        <div class="item">
+            <div class="heading-home">
+                <h1> <span>Best Coffee</span> Great your daily lives.</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commodo consequat. </p>
+                <button>Taste Coffee</button>
+            </div>
+            <div class="img">
+                <img src="./images/home.jpg" alt="">
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- About Section -->
+    <div id="about">
+        <div class="container">
+            <div class="heading">About <span>Us</span></div>
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="card">
+                        <img src="./images/about.png" alt="About Us" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-md-6 " id="paragraph">
+                    <h3>What Makes Our Coffee Special?</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum minima numquam porro consequuntur
+                        ipsum, nulla aliquam amet quam consequatur expedita.
+                        <br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque minus dicta quia maxime!
+                        Suscipit rerum similique non perferendis maiores rem, cumque explicabo exercitationem deserunt
+                        illum in aperiam natus impedit recusandae?
+                        <br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id rem voluptates harum, quis
+                        excepturi voluptatum!
+                    </p>
+                    <button id="about-btn">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About Section -->
+
+    <!-- top cards -->
+    <section class="top-cards">
+        <div class="heading2">Top <span>Categories</span></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 py-3 py-md-0">
+                    <div class="card">
+                        <img src="./images/c1.png" alt="">
+
+                    </div>
+                </div>
+                <div class="col-md-4 py-3 py-md-0">
+                    <div class="card">
+                        <img src="./images/c2.png" alt="">
+
+                    </div>
+                </div>
+                <div class="col-md-4 py-3 py-md-0">
+                    <div class="card">
+                        <img src="./images/c3.png" alt="">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- top cards -->
+
+    <section class="list">
+        <div class="container">
+            <div class="grid">
+                <div class="box">
+                    <img
+                        src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/80/ffffff/external-coffee-beans-coffee-shop-flatart-icons-outline-flatarticons.png" />
+                    <p>Wide Assortment</p>
+                </div>
+                <div class="box">
+                    <img src="https://img.icons8.com/ios/80/ffffff/meat-grinder.png" />
+                    <p>Wide Assortment</p>
+                </div>
+                <div class="box">
+                    <img
+                        src="https://img.icons8.com/external-vitaliy-gorbachev-lineal-vitaly-gorbachev/80/ffffff/external-cup-christmas-vitaliy-gorbachev-lineal-vitaly-gorbachev.png" />
+                    <p>Wide Assortment</p>
+                </div>
+                <div class="box">
+                    <img
+                        src="https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/80/ffffff/external-certificate-investment-kiranshastry-lineal-kiranshastry.png" />
+                    <p>Wide Assortment</p>
+                </div>
+                <div class="box">
+                    <img
+                        src="https://img.icons8.com/external-vitaliy-gorbachev-fill-vitaly-gorbachev/80/ffffff/external-leaf-spring-vitaliy-gorbachev-fill-vitaly-gorbachev.png" />
+                    <p>Wide Assortment</p>
+                </div>
+                <div class="box">
+                    <img
+                        src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/80/ffffff/external-coffee-beans-coffee-shop-flatart-icons-outline-flatarticons.png" />
+                    <p>Wide Assortment</p>
+                </div>
+            </div>
+            <a href="./menu.html" class="center-link">Visit Our Menu!</a> <!-- Use anchor tag for link -->
+        </div>
+    </section>
+
+    <!-- menu -->
+    <section class="menu" id="menu">
+        <div class="container">
+            <div class="heading3">Menu</div>
+        </div>
+        <div class="container" id="container2">
+            <div class="row">
+                <div class="col-md-3 py-3 py-md-0">
+                    <div class="card">
+                        <img src="./images/m1.png" alt="">
+                        <div class="card-body">
+                            <div class="star text-center">
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </div>
+                            <h3>Coffee</h3>
+                            <p>$99 <strike>$100</strike> <span><i class="fa-solid fa-cart-shopping"></i></span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 py-3 py-md-0">
+                    <div class="card">
+                        <img src="./images/m2.png" alt="">
+                        <div class="card-body">
+                            <div class="star text-center">
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </div>
+                            <h3>Coffee</h3>
+                            <p>$90 <strike>$110</strike> <span><i class="fa-solid fa-cart-shopping"></i></span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 py-3 py-md-0">
+                    <div class="card">
+                        <img src="./images/m3.png" alt="">
+                        <div class="card-body">
+                            <div class="star text-center">
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </div>
+                            <h3>Coffee</h3>
+                            <p>$100 <strike>$200</strike> <span><i class="fa-solid fa-cart-shopping"></i></span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 py-3 py-md-0">
+                    <div class="card">
+                        <img src="./images/m4.png" alt="">
+                        <div class="card-body">
+                            <div class="star text-center">
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </div>
+                            <h3>Coffee</h3>
+                            <p>$120 <strike>$150</strike> <span><i class="fa-solid fa-cart-shopping"></i></span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" style="margin-top: 50px;">
+                <div class="col-md-3 py-3 py-md-0">
+                    <div class="card">
+                        <img src="./images/m5.png" alt="">
+                        <div class="card-body">
+                            <div class="star text-center">
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </div>
+                            <h3>Coffee</h3>
+                            <p>$200 <strike>$300</strike> <span><i class="fa-solid fa-cart-shopping"></i></span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 py-3 py-md-0">
+                    <div class="card">
+                        <img src="./images/m6.png" alt="">
+                        <div class="card-body">
+                            <div class="star text-center">
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </div>
+                            <h3>Coffee</h3>
+                            <p>$30 <strike>$50</strike> <span><i class="fa-solid fa-cart-shopping"></i></span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 py-3 py-md-0">
+                    <div class="card">
+                        <img src="./images/m7.png" alt="">
+                        <div class="card-body">
+                            <div class="star text-center">
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </div>
+                            <h3>Coffee</h3>
+                            <p>$100 <strike>$200</strike> <span><i class="fa-solid fa-cart-shopping"></i></span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 py-3 py-md-0">
+                    <div class="card">
+                        <img src="./images/m8.png" alt="">
+                        <div class="card-body">
+                            <div class="star text-center">
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </div>
+                            <h3>Coffee</h3>
+                            <p>$120 <strike>$150</strike> <span><i class="fa-solid fa-cart-shopping"></i></span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- menu -->
+
+
+
+    <!--products-->
+    <section class="product mtop">
+        <div class="container">
+            <div class="heading">Products</div>
+        </div>
+        <div class="heading">
+            <h5>Online Store </h5>
+            <h2>Take with You</h2>
+            <p>Maecenas dapibus mattis eros, at fermentum sapien malesuada sit amet. Quisque in sollicitudin
+                eros.
+                Aliquam eget sapien sed orci accumsan interdum at ac mi. </p>
+        </div>
+
+        <div class="content grid mtop">
+            <div class="box">
+                <div class="img">
+                    <img src="./images/p1.jpg" alt="">
+                </div>
+                <div class="text">
+                    <div class="rate flex">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>Peru Whole Bean</h4>
+                    <h5>$42.49</h5>
+                </div>
+            </div>
+            <div class="box">
+                <div class="img">
+                    <img src="./images/p2.jpg" alt="">
+                </div>
+                <div class="text">
+                    <div class="rate flex">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>Peru Whole Bean</h4>
+                    <h5>$42.49</h5>
+                </div>
+            </div>
+            <div class="box">
+                <div class="img">
+                    <img src="./images/p3.jpg" alt="">
+                </div>
+                <div class="text">
+                    <div class="rate flex">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>Peru Whole Bean</h4>
+                    <h5>$42.49</h5>
+                </div>
+            </div>
+            <div class="box">
+                <div class="img">
+                    <img src="./images/p4.jpg" alt="">
+                </div>
+                <div class="text">
+                    <div class="rate flex">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>Peru Whole Bean</h4>
+                    <h5>$42.49</h5>
+                </div>
+            </div>
+            <div class="box">
+                <div class="img">
+                    <img src="./images/arabica coffee.png" alt="">
+                </div>
+                <div class="text">
+                    <div class="rate flex">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>Peru Whole Bean</h4>
+                    <h5>$42.49</h5>
+                </div>
+            </div>
+            <div class="box">
+                <div class="img">
+                    <img src="./images/Black Coffee.png" alt="">
+                </div>
+                <div class="text">
+                    <div class="rate flex">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>Peru Whole Bean</h4>
+                    <h5>$42.49</h5>
+                </div>
+            </div>
+            <div class="box">
+                <div class="img">
+                    <img src="./images/Cappuccino coffee.png" alt="">
+                </div>
+                <div class="text">
+                    <div class="rate flex">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>Peru Whole Bean</h4>
+                    <h5>$42.49</h5>
+                </div>
+            </div>
+            <div class="box">
+                <div class="img">
+                    <img src="./images/Decaf caffee.png" alt="">
+                </div>
+                <div class="text">
+                    <div class="rate flex">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>Peru Whole Bean</h4>
+                    <h5>$42.49</h5>
+                </div>
+            </div>
+            <div class="box">
+                <div class="img">
+                    <img src="./images/Espresso coffee.png" alt="">
+                </div>
+                <div class="text">
+                    <div class="rate flex">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>Peru Whole Bean</h4>
+                    <h5>$42.49</h5>
+                </div>
+            </div>
+            <div class="box">
+                <div class="img">
+                    <img src="./images/arabica coffee.png" alt="">
+                </div>
+                <div class="text">
+                    <div class="rate flex">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>Peru Whole Bean</h4>
+                    <h5>$42.49</h5>
+                </div>
+            </div>
+            <div class="box">
+                <div class="img">
+                    <img src="./images/Black Coffee.png" alt="">
+                </div>
+                <div class="text">
+                    <div class="rate flex">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>Peru Whole Bean</h4>
+                    <h5>$42.49</h5>
+                </div>
+
+            </div>
+        </div>
+        <button>Online Store</button>
+    </section>
+
+    <section class="brand">
+        <div class="container grid">
+            <div class="img">
+                <img src="./images/b1.png" alt="">
+            </div>
+            <div class="img">
+                <img src="./images/b2.png" alt="">
+            </div>
+            <div class="img">
+                <img src="./images/b4.png" alt="">
+            </div>
+            <div class="img">
+                <img src="./images/b5.png" alt="">
+            </div>
+            <div class="img">
+                <img src="./images/b6.png" alt="">
+            </div>
+        </div>
+    </section>
+
+    <section class="blog mtop">
+        <div class="heading">
+            <h5>Our Blog</h5>
+            <h2>Recent Articles</h2>
+        </div>
+
+        <div class="content grid">
+            <div class="box">
+                <div class="img">
+                    <img src="./images/blog1.jpg" alt="">
+                    <span>Roasted Coffee</span>
+                </div>
+                <div class="text">
+                    <div class="icon flex1">
+                        <div class="date">
+                            <i class="fas fa-calendar-alt"> </i>
+                            <label>Dec 12 2021</label>
+                        </div>
+                        <div class="date">
+                            <i class="fas fa-comment-dots"></i>
+                            <label>0</label>
+                        </div>
+                        <div class="date">
+                            <i class="fas fa-eye"></i>
+                            <label>170</label>
+                        </div>
+                    </div>
+                    <h2>Coffee Machine Rental and Delivery Business</h2>
+                </div>
+            </div>
+            <div class="box">
+                <div class="img">
+                    <img src="./images/blog2.jpg" alt="">
+                    <span>Roasted Coffee</span>
+                </div>
+                <div class="text">
+                    <div class="icon flex1">
+                        <div class="date">
+                            <i class="fas fa-calendar-alt"> </i>
+                            <label>Dec 12 2021</label>
+                        </div>
+                        <div class="date">
+                            <i class="fas fa-comment-dots"></i>
+                            <label>0</label>
+                        </div>
+                        <div class="date">
+                            <i class="fas fa-eye"></i>
+                            <label>170</label>
+                        </div>
+                    </div>
+                    <h2>The Most Expensive Cup of Coffee in the Usa</h2>
+                </div>
+            </div>
+            <div class="box">
+                <div class="img">
+                    <img src="images/blog3.jpg" alt="">
+                    <span>Roasted Coffee</span>
+                </div>
+                <div class="text">
+                    <div class="icon flex1">
+                        <div class="date">
+                            <i class="fas fa-calendar-alt"> </i>
+                            <label>Dec 12 2021</label>
+                        </div>
+                        <div class="date">
+                            <i class="fas fa-comment-dots"></i>
+                            <label>0</label>
+                        </div>
+                        <div class="date">
+                            <i class="fas fa-eye"></i>
+                            <label>170</label>
+                        </div>
+                    </div>
+                    <h2>History of Irish Coffee</h2>
+                </div>
+            </div>
+            <div class="box">
+                <div class="img">
+                    <img src="images/blog4.jpg" alt="">
+                    <span>Roasted Coffee</span>
+                </div>
+                <div class="text">
+                    <div class="icon flex1">
+                        <div class="date">
+                            <i class="fas fa-calendar-alt"> </i>
+                            <label>Dec 12 2021</label>
+                        </div>
+                        <div class="date">
+                            <i class="fas fa-comment-dots"></i>
+                            <label>0</label>
+                        </div>
+                        <div class="date">
+                            <i class="fas fa-eye"></i>
+                            <label>170</label>
+                        </div>
+                    </div>
+                    <h2>Coffee Machine Rental and Delivery Business</h2>
+                </div>
+            </div>
+        </div>
+        <button>Read More</button>
+    </section>
+
+    <section class="reviews-section section-padding section-bg" id="section_4">
+        <div class="container">
+            <div class="row justify-content-center">
+
+                <div class="col-lg-12 col-12 text-center mb-4 pb-lg-2">
+                    <em class="text-white">Reviews by Customers</em>
+
+                    <h2 class="text-white">Testimonials</h2>
+                </div>
+
+                <div class="timeline">
+                    <div class="timeline-container timeline-container-left">
+                        <div class="timeline-content">
+                            <div class="reviews-block">
+                                <div class="reviews-block-image-wrap d-flex align-items-center">
+                                    <img src="./images/reviews/review1.jpg" class="reviews-block-image img-fluid"
+                                        alt="">
+
+                                    <div class="">
+                                        <h6 class="text-white mb-0">Sandra</h6>
+                                        <em class="text-white"> Customers</em>
+                                    </div>
+                                </div>
+
+                                <div class="reviews-block-info">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                        tempor
+                                        incididunt ut labore et dolore magna aliqua.</p>
+
+                                    <div class="d-flex border-top pt-3 mt-4">
+                                        <strong class="text-white">4.5 <small class="ms-2">Rating</small></strong>
+
+                                        <div class="reviews-group ms-auto">
+                                            <i class="bi-star-fill"></i>
+                                            <i class="bi-star-fill"></i>
+                                            <i class="bi-star-fill"></i>
+                                            <i class="bi-star-fill"></i>
+                                            <i class="bi-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-container timeline-container-right">
+                        <div class="timeline-content">
+                            <div class="reviews-block">
+                                <div class="reviews-block-image-wrap d-flex align-items-center">
+                                    <img src="./images/reviews/review2.jpg" class="reviews-block-image img-fluid"
+                                        alt="">
+
+                                    <div class="">
+                                        <h6 class="text-white mb-0">Don</h6>
+                                        <em class="text-white"> Customers</em>
+                                    </div>
+                                </div>
+
+                                <div class="reviews-block-info">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                        tempor
+                                        incididunt ut labore et dolore magna aliqua.</p>
+
+                                    <div class="d-flex border-top pt-3 mt-4">
+                                        <strong class="text-white">4.5 <small class="ms-2">Rating</small></strong>
+
+                                        <div class="reviews-group ms-auto">
+                                            <i class="bi-star-fill"></i>
+                                            <i class="bi-star-fill"></i>
+                                            <i class="bi-star-fill"></i>
+                                            <i class="bi-star-fill"></i>
+                                            <i class="bi-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-container timeline-container-left">
+                        <div class="timeline-content">
+                            <div class="reviews-block">
+                                <div class="reviews-block-image-wrap d-flex align-items-center">
+                                    <img src="./images/reviews/review3.jpg" class="reviews-block-image img-fluid"
+                                        alt="">
+
+                                    <div class="">
+                                        <h6 class="text-white mb-0">Olivia</h6>
+                                        <em class="text-white"> Customers</em>
+                                    </div>
+                                </div>
+
+                                <div class="reviews-block-info">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                        tempor
+                                        incididunt ut labore et dolore magna aliqua.</p>
+
+                                    <div class="d-flex border-top pt-3 mt-4">
+                                        <strong class="text-white">4.5 <small class="ms-2">Rating</small></strong>
+
+                                        <div class="reviews-group ms-auto">
+                                            <i class="bi-star-fill"></i>
+                                            <i class="bi-star-fill"></i>
+                                            <i class="bi-star-fill"></i>
+                                            <i class="bi-star-fill"></i>
+                                            <i class="bi-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="image">
+        <div class="content grid">
+            <div class="box">
+                <div class="img">
+                    <img src="./images/a1.jpg" alt="">
+                </div>
+                <div class="icon">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+            <div class="box">
+                <div class="img">
+                    <img src="./images/a2.jpg" alt="">
+                </div>
+                <div class="icon">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+            <div class="box">
+                <div class="img">
+                    <img src="./images/a3.jpg" alt="">
+                </div>
+                <div class="icon">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+            <div class="box">
+                <div class="img">
+                    <img src="./images/a4.jpg" alt="">
+                </div>
+                <div class="icon">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+            <div class="box">
+                <div class="img">
+                    <img src="./images/a5.jpg" alt="">
+                </div>
+                <div class="icon">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+            <div class="box">
+                <div class="img">
+                    <img src="./images/a6.jpg" alt="">
+                </div>
+                <div class="icon">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footerbg">
+            <div class="content grid">
+                <div class="box">
+                    <div class="logo">
+                        <img src="image/logo.png" alt="">
+                    </div>
+                    <p> Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                        mollit anim
+                        id est laborum.</p>
+                    <div class="icon flex">
+                        <i class="fab fa-facebook-f"></i>
+                        <i class="fab fa-twitter"></i>
+                        <i class="fab fa-youtube"></i>
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <h3>Contact Info</h3>
+                    <div class="address">
+                        <div class="item flex">
+                            <div class="icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="text">
+                                <h5>Our Location:</h5>
+                                <span>Kathmandu Nepal</span>
+                            </div>
+                        </div>
+                        <div class="item flex">
+                            <div class="icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="text">
+                                <h5>Phone Number:</h5>
+                                <span>+123 456 789</span>
+                                <span>+123 456 789</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <h3>Subscribe</h3>
+
+                    <div class="input flex1">
+                        <input type="text" placeholder="Your Email">
+                        <input type="submit" value="Subscribe" class="submit">
+                    </div>
+                    <div class="check">
+                        <input type="checkbox">
+                        <span> I have read and agree to the terms & conditions</span>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="legal">
+                <p>Copyright (c) 2024 Copyright Holder All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle with Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+
+</html>

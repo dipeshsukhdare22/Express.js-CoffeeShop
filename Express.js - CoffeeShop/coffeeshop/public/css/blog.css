@@ -1,0 +1,123 @@
+/*-----------blog---------*/
+.blog {
+    text-align: center;
+    padding: 50px 0;
+    /* Added top and bottom padding */
+  }
+  
+  .blog .grid {
+    display: grid;
+    /* Ensure grid display */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    /* Added gap for spacing between boxes */
+    padding: 0 20px;
+    /* Horizontal padding */
+  }
+  
+  .blog .heading {
+    text-align: center;
+    /* Center align */
+    margin-bottom: 30px;
+    /* Spacing below */
+  }
+  
+  .blog .heading h5 {
+    font-weight: normal;
+    /* Optional styling for h5 */
+    color: #4D8B55;
+    /* Example color */
+  }
+  
+  .blog .heading h2 {
+    font-weight: bold;
+    /* Make h2 bold */
+    font-size: 2em;
+    /* Size of h2 */
+    color: #333;
+    /* Ensure this contrasts with the background */
+  }
+  
+  .blog .img {
+    width: 100%;
+    height: 240px;
+    transition: transform 0.5s;
+    /* Changed to transform for smoother scaling */
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .blog img {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s;
+    /* Ensure both images scale together */
+  }
+  
+  .blog img:hover {
+    transform: scale(1.1);
+    /* Adjusted scale for hover effect */
+  }
+  
+  .blog span {
+    position: absolute;
+    top: 10px;
+    /* Adjusted position for better alignment */
+    left: 10px;
+    /* Adjusted position for better alignment */
+    background: #4D8B55;
+    color: white;
+    padding: 5px 10px;
+    /* Added horizontal padding */
+    border-radius: 50px;
+    font-size: 14px;
+    /* Slightly smaller font size */
+    font-weight: bold;
+  }
+  
+  .blog .text {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .blog .text i {
+    color: #4D8B55;
+    margin-right: 10px;
+  }
+  
+  .blog .text label {
+    font-weight: bold;
+    color: grey;
+    margin-right: 20px;
+    font-size: 12px;
+  }
+  
+  .blog .text h2 {
+    letter-spacing: 0;
+    font-weight: 800;
+    margin-top: 10px;
+    transition: color 0.5s;
+    /* Ensures smooth color transition */
+    cursor: pointer;
+  }
+  
+  .blog .text:hover {
+    color: #4D8B55;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 992px) {
+    .blog .grid {
+      grid-template-columns: repeat(2, 1fr);
+      /* Adjusts grid on smaller screens */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .blog .grid {
+      grid-template-columns: 1fr;
+      /* Stack on mobile */
+    }
+  }
+  
+  /*-----------blog---------*/

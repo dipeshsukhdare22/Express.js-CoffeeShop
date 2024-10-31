@@ -1,0 +1,231 @@
+/*---------------------------------------
+  OUR MENU              
+-----------------------------------------*/
+.menu-section {
+    background-image: url('../images/happy-waitress-giving-coffee-customers-while-serving-them-coffee-shop.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .menu-container {
+    max-width: 90%;
+    margin: auto;
+    padding-bottom: 20px;
+  }
+  
+  .heading h2 {
+    margin-top: 5px;
+    font-size: 50px;
+    margin-top: 15px;
+    text-align: center;
+    color: #fff;
+  }
+  
+  .heading h5 {
+    color: #d4a373;
+    font-size: 18px;
+    text-align: center;
+    padding-top: 20px;
+  }
+  
+  .menu {
+    text-align: center;
+  }
+  
+  .menu-block-wrap {
+    background: rgba(0, 0, 0, 0.65);
+    border-radius: 20px;
+    ;
+    padding: 45px;
+  }
+  
+  .menu-block .border-top {
+    border-top-color: rgba(255, 255, 255, 0.35) !important;
+  }
+  
+  .menu-block h6 {
+    color: #fff;
+  }
+  
+  .menu-block small {
+    color: rgba(255, 255, 255, 0.35);
+  }
+  
+  .menu-block strong {
+    color: #DDA15E;
+    ;
+  }
+  
+  .menu-block-image {
+    border-radius: 100%;
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    display: block;
+    margin: auto;
+    cursor: pointer;
+  }
+  
+  .badge {
+    background-color: #BC6C25;
+    ;
+    font-size: 12px;
+    position: relative;
+    bottom: 4px;
+    padding-bottom: 6px;
+  }
+  
+  .badge::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -5px;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid #BC6C25;
+    ;
+  }
+  
+  /*-----------opentime---------*/
+  /* Remove gap between sections */
+  .menu-section,
+  .opentime {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Adjust .section-padding to prevent additional padding */
+  .section-padding {
+    padding: 0 !important;
+    /* Override padding in this specific section */
+  }
+  
+  .opentime {
+    min-height: 120vh;
+    /* Ensure the section is tall enough */
+    display: flex;
+    /* Use flexbox for layout */
+    align-items: center;
+    /* Center items vertically */
+    justify-content: center;
+    /* Center items horizontally */
+    position: relative;
+    /* Positioning for child elements */
+    background: #BC6C25;
+    /* Optional: Light background for visibility */
+    padding: 20px;
+    /* Add padding around the container */
+  }
+  
+  .opentime .right {
+    display: flex;
+    /* Use flex to center the box */
+    align-items: center;
+    /* Center items vertically */
+    justify-content: center;
+    /* Center items horizontally */
+  }
+  
+  .opentime .box {
+    height: auto;
+    /* Allow dynamic height based on content */
+    max-width: 600px;
+    /* Set a maximum width for the box */
+    margin: 10px;
+    /* Space between boxes */
+    border-radius: 10px;
+    /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Soft shadow */
+    background-color: #ffffff;
+    /* White background for the box */
+    padding: 20px;
+    /* Add padding inside the box */
+  }
+  
+  .opentime .box1 {
+    z-index: 1;
+    /* Bring box to the front */
+  }
+  
+  .opentime .heading {
+    text-align: center;
+    /* Center heading text */
+    margin-top: -45px;
+  }
+  
+  .opentime .heading h1 {
+    font-size: 36px;
+    /* Font size for the heading */
+    color: #4D8B55;
+    /* Color for the heading */
+    margin-bottom: 10px;
+    /* Space below heading */
+  }
+  
+  .opentime .time {
+    margin-top: 5px;
+    /* Space above time section */
+  }
+  
+  .opentime .time .day {
+    display: flex;
+    /* Use flex for aligning items */
+    justify-content: space-between;
+    /* Space between day and time */
+    margin-top: 10px;
+    /* Space between days */
+  }
+  
+  .opentime .time h4 {
+    font-size: 18px;
+    /* Font size for days */
+    color: #333;
+    /* Dark color for visibility */
+  }
+  
+  .opentime .time h5 {
+    color: #4D8B55;
+    /* Color for open hours */
+    font-size: 16px;
+    /* Font size for hours */
+    font-weight: 600;
+    /* Medium weight */
+  }
+  
+  .opentime .time p {
+    color: red;
+    /* Closed days in red */
+    font-weight: 600;
+    /* Medium weight */
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .opentime {
+      flex-direction: column;
+      /* Stack elements on small screens */
+      min-height: auto;
+      /* Allow natural height */
+      padding: 10px;
+      /* Reduce padding for smaller screens */
+    }
+  
+    .opentime .heading h1 {
+      font-size: 28px;
+      /* Reduce heading size for smaller screens */
+    }
+  
+    .opentime .time h4 {
+      font-size: 16px;
+      /* Reduce font size for days */
+    }
+  
+    .opentime .time h5 {
+      font-size: 14px;
+      /* Reduce font size for hours */
+    }
+  }
+  
+  /*-----------opentime---------*/
